@@ -912,7 +912,7 @@ p {
 /* Mobile Booking Bar */
 
 .mobile-booking-bar {
-    display: block;
+    display: none;
     opacity: 0;
     pointer-events: none;
     transform: translateY(18px);
@@ -989,6 +989,10 @@ p {
         display: none;
     }
 
+
+    .nav-panel .nav-cta {
+        display: none;
+    }
     .nav-panel a.active-link {
         color: var(--gold-soft);
     }
