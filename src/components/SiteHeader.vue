@@ -19,10 +19,30 @@ const menuButtonLabel = computed(() =>
 
 function closeMenu() {
   isMenuOpen.value = false;
+  document.body.classList.remove("menu-open");
 }
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
+}
+
+function scrollToSection(event, sectionId) {
+  event.preventDefault();
+  closeMenu();
+
+  const target = document.getElementById(sectionId);
+
+  if (!target) {
+    return;
+  }
+
+  const top = sectionId === "home" ? 0 : target.offsetTop;
+
+  window.history.pushState(null, "", `#${sectionId}`);
+  window.scrollTo({
+    top,
+    behavior: "smooth"
+  });
 }
 
 function updateActiveSection() {
@@ -62,7 +82,7 @@ onBeforeUnmount(() => {
 <template>
   <header class="site-header">
     <nav class="nav">
-      <a href="#home" class="brand" @click="closeMenu">
+      <a href="#home" class="brand" @click="scrollToSection($event, 'home')">
         <span class="brand-mark">EK</span>
         <span class="brand-text">
           <strong>Coiffeur EK Exklusiv</strong>
@@ -91,7 +111,7 @@ onBeforeUnmount(() => {
           :key="item.href"
           :href="item.href"
           :class="{ 'active-link': activeSection === item.section }"
-          @click="closeMenu"
+          @click="scrollToSection($event, item.section)"
         >
           {{ item.label }}
         </a>
