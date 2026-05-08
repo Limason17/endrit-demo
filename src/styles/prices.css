@@ -1,0 +1,292 @@
+/* Prices */
+
+.prices-section {
+    border-top: 1px solid rgba(212, 175, 55, 0.18);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.prices-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 82% 12%, rgba(212, 175, 55, 0.15), transparent 27%),
+            linear-gradient(112deg, transparent 0 47%, rgba(212, 175, 55, 0.07) 47% 48%, transparent 48% 100%);
+    pointer-events: none;
+}
+
+.prices-section p {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.prices-top {
+    display: grid;
+    grid-template-columns: 1fr 0.62fr;
+    gap: 56px;
+    align-items: end;
+    margin-bottom: 34px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.prices-top p:last-child {
+    max-width: 410px;
+    font-size: 1rem;
+}
+
+.pricing-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: stretch;
+    width: min(920px, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.24);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.pricing-feature {
+    position: relative;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+            "top price"
+            "title price"
+            "copy price"
+            "extra extra";
+    column-gap: 24px;
+    row-gap: 5px;
+    align-items: center;
+    overflow: hidden;
+    padding: 22px 26px;
+    border: 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.24);
+    border-radius: 0;
+    background:
+            linear-gradient(90deg, rgba(212, 175, 55, 0.13), transparent 48%),
+            rgba(255, 255, 255, 0.045);
+}
+
+.pricing-feature::before {
+    content: "";
+    position: absolute;
+    left: 26px;
+    top: 0;
+    width: 54px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    pointer-events: none;
+}
+
+.pricing-feature::after {
+    content: "EK";
+    position: absolute;
+    right: 16px;
+    bottom: -0.28em;
+    color: rgba(212, 175, 55, 0.028);
+    font-size: 5.8rem;
+    line-height: 0.8;
+    font-weight: 900;
+    letter-spacing: 0;
+    pointer-events: none;
+    -webkit-text-stroke: 1px rgba(241, 214, 122, 0.12);
+}
+
+.pricing-feature-top {
+    position: relative;
+    grid-area: top;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.pricing-feature-top span,
+.pricing-item span,
+.pricing-feature-price small {
+    color: var(--gold);
+    font-size: 0.66rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+
+.pricing-feature-top b {
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 999px;
+    color: var(--gold-soft);
+    font-size: 0.68rem;
+    font-weight: 900;
+}
+
+.pricing-feature h3 {
+    position: relative;
+    grid-area: title;
+    z-index: 1;
+    max-width: 100%;
+    font-size: clamp(1.95rem, 2.7vw, 2.75rem);
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.pricing-feature p {
+    position: relative;
+    grid-area: copy;
+    z-index: 1;
+    max-width: 470px;
+    margin-top: 0;
+    font-size: 0.92rem;
+}
+
+.pricing-feature-price {
+    position: relative;
+    grid-area: price;
+    z-index: 1;
+    align-self: center;
+    justify-self: end;
+    margin-top: 0;
+    display: grid;
+    justify-items: end;
+    gap: 2px;
+}
+
+.pricing-feature-price strong {
+    color: var(--gold-soft);
+    font-size: clamp(3.2rem, 5vw, 4.25rem);
+    line-height: 0.82;
+    letter-spacing: 0;
+}
+
+.pricing-feature-extra {
+    position: relative;
+    grid-area: extra;
+    z-index: 1;
+    align-self: start;
+    justify-self: end;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: -2px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.pricing-feature-extra span {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.pricing-feature-extra b {
+    color: var(--gold-soft);
+    font-size: 0.98rem;
+    white-space: nowrap;
+}
+
+.pricing-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.pricing-item {
+    position: relative;
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 22px;
+    align-items: center;
+    min-height: auto;
+    overflow: hidden;
+    padding: 16px 26px;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 0;
+    background:
+            linear-gradient(90deg, rgba(212, 175, 55, 0.09), transparent 44%),
+            transparent;
+    background-repeat: no-repeat;
+    background-size: 0 100%, auto;
+    transition: 0.24s ease;
+}
+
+.pricing-item::before {
+    content: "";
+    position: absolute;
+    left: 26px;
+    top: 0;
+    width: 46px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.pricing-item-wide {
+    grid-column: auto;
+    min-height: auto;
+}
+
+.pricing-item:last-child {
+    border-bottom: 0;
+}
+
+.pricing-item h3 {
+    margin: 6px 0 3px;
+    font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+}
+
+.pricing-item p {
+    font-size: 0.88rem;
+}
+
+.pricing-item strong {
+    justify-self: end;
+    color: var(--white);
+    font-size: clamp(1.95rem, 3.2vw, 2.55rem);
+    line-height: 0.92;
+    letter-spacing: 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.pricing-item-wide strong {
+    justify-self: end;
+    font-size: clamp(1.95rem, 3.2vw, 2.55rem);
+    text-align: right;
+}
+
+.pricing-item strong small {
+    display: block;
+    color: var(--gold);
+    font-size: 0.62rem;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.pricing-item:hover {
+    border-color: rgba(212, 175, 55, 0.36);
+    background-size: 100% 100%, auto;
+    transform: none;
+}
+
+.pricing-item:hover strong {
+    color: var(--gold-soft);
+}
+

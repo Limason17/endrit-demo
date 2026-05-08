@@ -1,0 +1,22 @@
+/* Mobile Booking Bar */
+
+.mobile-booking-bar {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: 0.25s ease;
+}
+
+.mobile-booking-bar.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+body.menu-open .mobile-booking-bar {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+}
+

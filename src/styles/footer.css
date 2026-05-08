@@ -1,0 +1,20 @@
+/* Footer */
+
+.footer {
+    background: #030303;
+    border-top: 1px solid var(--border);
+    padding: 26px 0 92px;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.footer a {
+    color: var(--gold);
+    font-weight: 800;
+}
+

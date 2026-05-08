@@ -1,0 +1,12 @@
+/* Section Head */
+
+.section-head {
+    max-width: 760px;
+    margin-bottom: 38px;
+}
+
+.section-head p:last-child {
+    margin-top: 13px;
+}
+
+

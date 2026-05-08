@@ -1,0 +1,123 @@
+/* Header */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background: rgba(5, 5, 5, 0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav {
+    width: min(1180px, calc(100% - 24px));
+    height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    z-index: 60;
+}
+
+.brand-mark {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    color: var(--gold-soft);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.brand-text strong {
+    display: block;
+    font-size: 0.92rem;
+    line-height: 1.1;
+}
+
+.brand-text small {
+    color: var(--muted-dark);
+    font-size: 0.72rem;
+}
+
+.nav-panel {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav-menu-meta,
+.nav-menu-watermark {
+    display: none;
+}
+
+.nav-panel a {
+    color: var(--muted);
+    font-size: 0.92rem;
+    transition: 0.2s ease;
+}
+
+.nav-panel a:hover {
+    color: var(--gold-soft);
+}
+
+.nav-panel a.active-link {
+    color: var(--gold-soft);
+}
+
+.nav-panel a.active-link::after {
+    opacity: 1;
+}
+
+.nav-panel .nav-cta {
+    color: #050505 !important;
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft)) !important;
+    padding: 11px 17px;
+    border-radius: 999px;
+    font-weight: 900;
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.22);
+}
+
+.nav-panel .nav-cta:hover {
+    color: #050505 !important;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold)) !important;
+}
+
+.menu-btn {
+    display: none;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    z-index: 60;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--white);
+    transition: 0.25s ease;
+}
+
+.menu-btn.active span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-btn.active span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
