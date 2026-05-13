@@ -1,78 +1,22 @@
-<script setup>
-const products = [
-  {
-    brand: "Reuzel",
-    title: "Pomade",
-    text: "Klassischer Barber-Look mit kontrolliertem Styling und gepflegtem Finish.",
-    image: "/assets/images/product_reuzel.png",
-    alt: "Reuzel Pomade",
-    featured: true
-  },
-  {
-    brand: "Slick Gorilla",
-    title: "Styling Powder",
-    text: "Für Volumen, matte Textur und einen natürlichen Look ohne Glanz.",
-    image: "/assets/images/product_slickgorilla.png",
-    alt: "Slick Gorilla Styling Powder"
-  },
-  {
-    brand: "Uppercut Deluxe",
-    title: "Matte Clay",
-    text: "Für starken Halt, klare Struktur und ein modernes mattes Finish.",
-    image: "/assets/images/product_uppercut.png",
-    alt: "Uppercut Deluxe Matte Clay"
-  },
-  {
-    brand: "Proraso",
-    title: "Beard Oil",
-    text: "Pflegt den Bart, macht ihn weicher und sorgt für einen sauberen Duft.",
-    image: "/assets/images/product_proraso.png",
-    alt: "Proraso Beard Oil"
-  },
-  {
-    brand: "Marmara Barber",
-    title: "Aftershave Cologne",
-    text: "Frisches Finish nach Rasur, Konturen oder Bartstyling.",
-    image: "/assets/images/product_marmara.png",
-    alt: "Marmara Barber Aftershave"
-  },
-  {
-    brand: "Depot",
-    title: "Hair & Beard Shampoo",
-    text: "Reinigung für Haare und Bart, passend für die Pflege zuhause.",
-    image: "/assets/images/product_depot.png",
-    alt: "Depot Hair and Beard Shampoo"
-  }
-];
-</script>
-
 <template>
   <section id="produkte" class="section product-section">
     <div class="container">
-      <div class="products-top">
-        <div>
+      <div class="products-shell">
+        <div class="products-copy">
           <p class="section-kicker">Produkte</p>
-          <h2>Professionelle Pflege für zuhause.</h2>
+          <h2>Produkte direkt im Salon kaufen.</h2>
+          <p>
+            Ausgewählte Pflege- und Stylingprodukte sind vor Ort erhältlich.
+            Wir beraten dich persönlich, damit du genau das mitnimmst, was zu
+            deinem Schnitt, Bart und Styling passt.
+          </p>
         </div>
 
-        <p>
-          Ausgewählte Styling- und Pflegeprodukte direkt im Salon erhältlich.
-          Keine festen Online-Preise, da Produkte und Verfügbarkeit variieren.
-        </p>
-      </div>
-
-      <div class="product-showcase">
-        <article
-          v-for="product in products"
-          :key="product.title"
-          class="product-item"
-          :class="{ 'product-featured': product.featured }"
-        >
-          <img :src="product.image" :alt="product.alt" />
-          <span>{{ product.brand }}</span>
-          <h3>{{ product.title }}</h3>
-          <p>{{ product.text }}</p>
-        </article>
+        <aside class="products-availability" aria-label="Produktverkauf im Salon">
+          <span>Erhältlich vor Ort</span>
+          <strong>Frag beim Termin nach.</strong>
+          <p>Sortiment und Verfügbarkeit können variieren.</p>
+        </aside>
       </div>
     </div>
   </section>
