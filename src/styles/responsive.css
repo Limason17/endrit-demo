@@ -495,9 +495,9 @@
     }
 
     .hero {
-        min-height: 100svh;
-        padding: 108px 0 40px;
-        align-items: flex-end;
+        min-height: auto;
+        padding: 122px 0 44px;
+        align-items: flex-start;
     }
 
     .hero-bg {
